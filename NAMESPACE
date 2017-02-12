@@ -1,0 +1,10 @@
+exportPattern("^[[:alpha:]]+")
+useDynLib(WWR)
+export(winratio)
+export(wwratio)
+export(wlogr2)
+importFrom("stats", "pnorm", "rnorm", "runif")
+
+
+
+
