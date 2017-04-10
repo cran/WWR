@@ -1,10 +1,8 @@
-exportPattern("^[[:alpha:]]+")
-useDynLib(WWR)
+#exportPattern("^[[:alpha:]]+")
+useDynLib(WWR, .registration = TRUE)
 export(winratio)
 export(wwratio)
 export(wlogr2)
+export(genwr)
+import("inline")
 importFrom("stats", "pnorm", "rnorm", "runif")
-
-
-
-

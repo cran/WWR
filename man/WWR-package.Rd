@@ -24,7 +24,9 @@ Pocock S.J., Ariti C.A., Collier T. J. and Wang D. 2012. The win ratio: a new ap
 
 Luo X., Tian H., Mohanty S. and Tsai W.-Y. 2015. An alternative approach to confidence interval estimation for the win ratio statistic. Biometrics, 71, 139-145.
 
-Luo X., Qiu J., Bai S. and Tian H. 2017. Weighted win loss approach for analyzing prioritized outcomes. Statistics in Medicine, to appear.
+Bebu I. and Lachin J.M. 2016. Large sample inference for a win ratio analysis of a composite outcome based on prioritized components. Biostatistics, 17, 178-187.
+
+Luo X., Qiu J., Bai S. and Tian H. 2017. Weighted win loss approach for analyzing prioritized outcomes. Statistics in Medicine, <doi: 10.1002/sim.7284>.
 }
 \keyword{win ratio}
 \keyword{weighted win ratio}

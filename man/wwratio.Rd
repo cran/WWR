@@ -18,10 +18,13 @@ wwratio(y1, y2, d1, d2, z, wty1 = 1, wty2 = 1)
 \value{
 \item{wty1}{Weight for non-terminal event}
 \item{wty2}{Weight for terminal event}
-\item{w2}{Weighted number of winner pairs based on the terminal event}
-\item{l2}{Weighted number of loser pairs based on the terminal event}
-\item{w1}{Weighted number of winner pairs based on the non-terminal event}
-\item{l1}{Weighted number of loser pairs based on the non-terminal event}
+\item{totalw}{Total number of wins in group 1}
+\item{totall}{Total number of losses in group 1}
+\item{tw}{A vector of total numbers of wins in group 1 for each of the two outcomes. Note that \code{totalw}=sum(\code{tw}), and the first element is for the terminal event and the second element is for the non-terminal event.}
+\item{tl}{A vector of total numbers of losses in group 1 for each of the two outcomes. Note that \code{totall}=sum(\code{tl}), and the first element is for the terminal event and the second element is for the non-terminal event.}
+\item{xp}{The ratios between \code{tw} and \code{tl}}
+\item{cwindex}{The win contribution index defined as the ratio between \code{tw} and \code{totalw}+\code{totall}}
+\item{clindex}{The loss contribution index defined as the ratio between \code{tl} and \code{totalw}+\code{totall}}
 \item{wr}{weighted win ratio}
 \item{vr}{estimated variance of weighted win ratio}
 \item{tr}{standardized log(wr)}
@@ -40,7 +43,7 @@ Pocock S.J., Ariti C.A., Collier T. J. and Wang D. 2012. The win ratio: a new ap
 
 Luo X., Tian H., Mohanty S. and Tsai W.-Y. 2015. An alternative approach to confidence interval estimation for the win ratio statistic. Biometrics, 71, 139-145.
 
-Luo X., Qiu J., Bai S. and Tian H. 2017. Weighted win loss approach for analyzing prioritized outcomes. Statistics in Medicine, to appear.
+Luo X., Qiu J., Bai S. and Tian H. 2017. Weighted win loss approach for analyzing prioritized outcomes. Statistics in Medicine, doi: 10.1002/sim.7284.
 }
 \author{Xiaodong Luo}
 \seealso{\code{\link{wlogr2}},\code{\link{winratio}}}

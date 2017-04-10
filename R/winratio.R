@@ -8,7 +8,7 @@
       vr<-1.0
       vd<-1.0
       vp<-1.0
-      abc1<-.Fortran("winratio",as.integer(n),as.double(y1),as.double(y2),as.integer(d),as.integer(z),doublebad=as.integer(doublebad),
+      abc1<-.Fortran("xwinratio",as.integer(n),as.double(y1),as.double(y2),as.integer(d),as.integer(z),doublebad=as.integer(doublebad),
                                wr=as.double(wr),vr=as.double(vr),wd=as.double(wd),vd=as.double(vd),wp=as.double(wp),vp=as.double(vp),
                                w2=as.double(w2),l2=as.double(l2),w1=as.double(w1),l1=as.double(l1))
       wr<-abc1$wr
@@ -21,7 +21,13 @@
       tr<-sqrt(n)*log(wr)*wr/sqrt(vr);pr<-2*(1-pnorm(abs(tr)))
       tp<-sqrt(n)*log(wp)*wp/sqrt(vp);pp<-2*(1-pnorm(abs(tp)))
       w2<-abc1$w2;l2<-abc1$l2;w1<-abc1$w1;l1<-abc1$l1
-    list(doublebad=doublebad,w2=w2,l2=l2,w1=w1,l1=l1,wr=wr,vr=vr,tr=tr,pr=pr,wd=wd,vd=vd,td=td,pd=pd,wp=wp,vp=vp,tp=tp,pp=pp)
+      cwindex<-c(w2,w1)/(w2+w1+l2+l1)
+      clindex<-c(l2,l1)/(w2+w1+l2+l1)
+      
+      list(doublebad=doublebad,totalw=(w2+w1),totall=(l2+l1),
+         tw=c(w2,w1),tl=c(l2,l1),xp=c(w2,w1)/c(l2,l1),
+         cwindex=cwindex,clindex=clindex,
+         wr=wr,vr=vr,tr=tr,pr=pr,wd=wd,vd=vd,td=td,pd=pd,wp=wp,vp=vp,tp=tp,pp=pp)
 }
 
 

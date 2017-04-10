@@ -1,6 +1,6 @@
 \name{wlogr2}
 \alias{wlogr2}
-\title{wlogr2}
+\title{Log-rank statistics}
 \description{This will calculate the log-rank and Gehan statistics along with their variances}
 \usage{
 wlogr2(y, d, z, wty = 1)
@@ -11,7 +11,6 @@ wlogr2(y, d, z, wty = 1)
   \item{z}{a vector of group indicators with 1=treatment and 0=control}
   \item{wty}{a vector of weight indicators with 1=Gehan and 2=log-rank}
 }
-\details{More details}
 \value{\item{wty}{Type of statistics, 1=Gehan, 2=log-rank}
        \item{stat}{value of the stat}
        \item{vstat}{estimated variance}

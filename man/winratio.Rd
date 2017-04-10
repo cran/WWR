@@ -15,10 +15,13 @@ winratio(y1,y2,d,z,doublebad=1)
 \details{win loss statistics}
 \value{
 \item{doublebad}{a numeric value with 1 denoting that both the non terminal event and the terminal are bad (i.e. disease progrssion and death) and 0 denoting that the non terminal event is good (i.e. response to the treatment).}
-\item{w2}{number of winner pairs based on the terminal event}
-\item{l2}{number of loser pairs based on the terminal event}
-\item{w1}{number of winner pairs based on the non-terminal event}
-\item{l1}{number of loser pairs based on the non-terminal event}
+\item{totalw}{Total number of wins in group 1}
+\item{totall}{Total number of losses in group 1}
+\item{tw}{A vector of total numbers of wins in group 1 for each of the two outcomes. Note that \code{totalw}=sum(\code{tw}), and the first element is for the terminal event and the second element is for the non-terminal event.}
+\item{tl}{A vector of total numbers of losses in group 1 for each of the two outcomes. Note that \code{totall}=sum(\code{tl}), and the first element is for the terminal event and the second element is for the non-terminal event.}
+\item{xp}{The ratios between \code{tw} and \code{tl}}
+\item{cwindex}{The win contribution index defined as the ratio between \code{tw} and \code{totalw}+\code{totall}}
+\item{clindex}{The loss contribution index defined as the ratio between \code{tl} and \code{totalw}+\code{totall}}
 \item{wr}{win ratio}
 \item{vr}{estimated variance of win ratio}
 \item{tr}{standardized log(wr)}
