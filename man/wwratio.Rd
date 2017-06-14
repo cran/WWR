@@ -16,6 +16,9 @@ wwratio(y1, y2, d1, d2, z, wty1 = 1, wty2 = 1)
 }
 \details{weighted win statistics}
 \value{
+\item{n1}{Number of subjects in group 1}
+\item{n0}{Number of subjects in group 0}
+\item{n}{Total number of subjects in both groups}
 \item{wty1}{Weight for non-terminal event}
 \item{wty2}{Weight for terminal event}
 \item{totalw}{Total number of wins in group 1}
@@ -79,7 +82,7 @@ i<-1 ##i=1,2,3,4
 j<-2 ##j=1,2
 
 wtest<-wwratio(y1,y2,d1,d2,z,wty1=i,wty2=j)
-wtest
+summary(wtest)
 }
 \keyword{weighted}
 \keyword{win ratio}

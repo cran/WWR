@@ -11,6 +11,9 @@ genwr(aindex)
 }
 \details{General win loss statistics}
 \value{
+\item{n1}{Number of subjects in group 1}
+\item{n0}{Number of subjects in group 0}
+\item{n}{Total number of subjects in both groups}
 \item{totalw}{Total number of wins in group 1}
 \item{totall}{Total number of losses in group 1}
 \item{tw}{A vector of total numbers of wins in group 1 for each of the outcomes. Note that \code{totalw}=sum(\code{tw}), the first element is for the most important outcome, the second elemnet is for the second important outcome etc.}
@@ -91,14 +94,14 @@ d[d1==1&d2==0]<-4
 
 ###un-weighted win loss
 wtest<-winratio(y1,y2,d,z,doublebad=1)
-wtest
+summary(wtest)
 
 i<-1 ##i=1,2,3,4
 j<-1 ##j=1,2
 
 ###weighted win loss
 wwtest<-wwratio(y1,y2,d1,d2,z,wty1=i,wty2=j)
-wwtest
+summary(wwtest)
 
 ####general win loss
 ###Define the win loss function
@@ -131,7 +134,7 @@ bindex<-matrix(0,nrow=n1,ncol=n0)
 for (i in 1:n1)for (j in 1:n0)bindex[i,j]<-comp(yy1[i,],yy0[j,])
 ###Use the calculated win loss matrix to calculate the general win loss statistics
 bgwr<-genwr(bindex)
-bgwr
+summary(bgwr)
 
 ##################################################################
 # Note: if n>=1000 or the win loss function is complex, 
@@ -219,7 +222,7 @@ aindex<-matrix(cubefnx5(n1,n0,length(y[1,]), yy1,yy0,
                matrix(0,nrow=n1,ncol=n0))$aindex,byrow=FALSE,ncol=n0)
 ###Use the win loss indicator matrix to calculate the general win loss statistics
 agwr<-genwr(aindex)
-agwr
+summary(agwr)
 
 
 ##########################################################
@@ -303,7 +306,7 @@ aindex<-matrix(cubefnx6(n1,n0,length(y[1,]), yy1,yy0,
 
 ###Use the win loss indicator matrix to calculate the general win loss statistics
 agwr<-genwr(aindex)
-agwr
+summary(agwr)
 }
 \keyword{general win ratio}
 \keyword{win ratio}

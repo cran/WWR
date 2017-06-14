@@ -25,10 +25,12 @@
     cwindex<-tw/sum(tw+tl)
     clindex<-tl/sum(tw+tl)
     xp<-abc1$xp
-    list(totalw=sum(tw), totall=sum(tl),tw=tw,tl=tl,xp=xp,cwindex=cwindex,clindex=clindex,
+    me<-list(n1=n1,n0=n0,n=n,totalw=sum(tw), totall=sum(tl),tw=tw,tl=tl,xp=xp,cwindex=cwindex,clindex=clindex,
          wr=wr,vr=vr,vr0=vr0,tr=tr,pr=pr,tr0=tr0,pr0=pr0,
          wd=wd,vd=vd,vd0=vd0,td=td,pd=pd,td0=td0,pd0=pd0,
          wp=wp,vp=vp,vp0=vp0,tp=tp,pp=pp,tp0=tp0,pp0=pp0)
+    class(me)<-append(class(me),"WWR")
+    return(me)
 }
 
 

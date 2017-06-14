@@ -15,6 +15,9 @@ winratio(y1,y2,d,z,doublebad=1)
 \details{win loss statistics}
 \value{
 \item{doublebad}{a numeric value with 1 denoting that both the non terminal event and the terminal are bad (i.e. disease progrssion and death) and 0 denoting that the non terminal event is good (i.e. response to the treatment).}
+\item{n1}{Number of subjects in group 1}
+\item{n0}{Number of subjects in group 0}
+\item{n}{Total number of subjects in both groups}
 \item{totalw}{Total number of wins in group 1}
 \item{totall}{Total number of losses in group 1}
 \item{tw}{A vector of total numbers of wins in group 1 for each of the two outcomes. Note that \code{totalw}=sum(\code{tw}), and the first element is for the terminal event and the second element is for the non-terminal event.}
@@ -75,7 +78,7 @@ d[d1==0&d2==1]<-2
 d[d1==0&d2==0]<-3
 d[d1==1&d2==0]<-4
 wtest<-winratio(y1,y2,d,z,doublebad=1)
-wtest
+summary(wtest)
 }
 \keyword{win ratio}
 \keyword{pairwise comparison}
