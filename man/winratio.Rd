@@ -3,18 +3,17 @@
 \title{Win Loss Statistics}
 \description{Calculate the win loss statistics of Pocock et al. (2012) and the corresponding variances, which are based on a U-statistic method of Luo et al. (2015)}
 \usage{
-winratio(y1,y2,d,z,doublebad=1)
+winratio(y1,y2,d1,d2,z)
 }
 \arguments{
 \item{y1}{ a numeric vector of event times denoting the minimum of event times \eqn{T_1}, \eqn{T_2} and censoring time \eqn{C}, where the endpoint \eqn{T_2}, corresponding to the terminal event, is considered of higher clinical importance than the endpoint \eqn{T_1}, corresponding to the non-terminal event. Note that the terminal event may censor the non-terminal event, resulting in informative censoring.}
 \item{y2}{ a numeric vector of event times denoting the minimum of event time \eqn{T_2} and censoring time \eqn{C}. Clearly, y2 is not smaller than y1. }
-\item{d}{ a numeric vector of event indicators with 1 denoting both the non-terminal event and the terminal event are observed; 2 dentoing only the terminal event is observed; 3 denoting only the censoring time is observed; and 4 denoting that the non-terminal event and the censoring time are observed}
+\item{d1}{ a numeric vector of event indicators with 1 denoting the non-terminal event is observed and 0 denoting otherwise.}
+\item{d2}{ a numeric vector of event indicators with 1 denoting the terminal event is observed and 0 denoting otherwise.Note that Luo et al. (2015) use a single indicator \eqn{d} so that \eqn{d=1} if and only if \code{d1}=1 and \code{d2}=1; \eqn{d=2} if and only if \code{d1}=0 and \code{d2}=1; \eqn{d=3} if and only if \code{d1}=0 and \code{d2}=0; and \eqn{d=4} if and only if \code{d1}=1 and \code{d2}=0.}
 \item{z}{ a numeric vector of group indicators with 1 denoting the treatment group and 0 the control group.}
-\item{doublebad}{a numeric value with 1 denoting that both the non terminal event and the terminal are bad (i.e. disease progrssion and death) and 0 denoting that the non terminal event is good (i.e. response to the treatment).}
 }
 \details{win loss statistics}
 \value{
-\item{doublebad}{a numeric value with 1 denoting that both the non terminal event and the terminal are bad (i.e. disease progrssion and death) and 0 denoting that the non terminal event is good (i.e. response to the treatment).}
 \item{n1}{Number of subjects in group 1}
 \item{n0}{Number of subjects in group 0}
 \item{n}{Total number of subjects in both groups}
@@ -72,12 +71,7 @@ y1<-apply(tem,1,min)
 y2<-apply(tem[,2:3],1,min)
 d1<-as.numeric(tem[,1]<=y1)
 d2<-as.numeric(tem[,2]<=y2)
-d<-rep(0,n)
-d[d1==1&d2==1]<-1
-d[d1==0&d2==1]<-2
-d[d1==0&d2==0]<-3
-d[d1==1&d2==0]<-4
-wtest<-winratio(y1,y2,d,z,doublebad=1)
+wtest<-winratio(y1,y2,d1,d2,z)
 summary(wtest)
 }
 \keyword{win ratio}

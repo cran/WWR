@@ -86,14 +86,9 @@ y1<-apply(tem,1,min)
 y2<-apply(tem[,2:3],1,min)
 d1<-as.numeric(tem[,1]<=y1)
 d2<-as.numeric(tem[,2]<=y2)
-d<-rep(0,n)
-d[d1==1&d2==1]<-1
-d[d1==0&d2==1]<-2
-d[d1==0&d2==0]<-3
-d[d1==1&d2==0]<-4
 
 ###un-weighted win loss
-wtest<-winratio(y1,y2,d,z,doublebad=1)
+wtest<-winratio(y1,y2,d1,d2,z)
 summary(wtest)
 
 i<-1 ##i=1,2,3,4

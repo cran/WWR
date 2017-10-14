@@ -1,5 +1,5 @@
 
-"wlogr2"<-function(y,d,z,wty=1)
+wlogr2<-function(y,d,z,wty=1)
 {
     n<-length(y)
     ay<-rank(y,ties.method="min")

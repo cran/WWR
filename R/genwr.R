@@ -1,5 +1,5 @@
 
-"genwr"<-function(aindex){
+genwr<-function(aindex){
     aindex<-as.matrix(aindex)
     n1<-nrow(aindex)
     n0<-ncol(aindex)

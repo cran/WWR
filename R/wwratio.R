@@ -1,4 +1,4 @@
-"wwratio"<-function(y1,y2,d1,d2,z,wty1=1,wty2=1){
+wwratio<-function(y1,y2,d1,d2,z,wty1=1,wty2=1){
     d1<-ifelse(d1==0 | d1==1, d1,NA)
     if (sum(is.na(d1))>0) stop("The event indicator 'd1' only takes values 0 and 1")
     d2<-ifelse(d2==0 | d2==1, d2,NA)
