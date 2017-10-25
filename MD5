@@ -1,11 +1,11 @@
-332c10599868dbffbb0d743cf1ad91d4 *DESCRIPTION
+d9232826a012bfc6570cdf40511302a7 *DESCRIPTION
 82b530e1487fe8b172f2d272878d5895 *NAMESPACE
 f9743ba321cbd1192e39ec009df63f01 *R/genwr.R
-ea78e9c95b2ab79dad220cec751b2d29 *R/sfunc.R
+78d26ea3af75b2fa6c64bd24da714837 *R/sfunc.R
 37c89657606c0e4eeb44b6f11e750f91 *R/winratio.R
 19f116cdd460f2911b6f5fbab7a6e2ed *R/wlogr2.R
 d557e6d02b81783f1b1fbeb9cb4e2665 *R/wwratio.R
-a4d72c2719a62f759d40c59a00905919 *build/partial.rdb
+cd8441c9921b82890c506ec5f32656ed *build/partial.rdb
 969d99951eb395bfc713ae9bc5abefe1 *man/WWR-package.Rd
 192cb3ae4ebd8e934890c9e2597846a3 *man/genwr.Rd
 964a7ee74dbb9d87575960b652435835 *man/winratio.Rd

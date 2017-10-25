@@ -1,7 +1,7 @@
 summary.WWR <- function(object,...,digits=4){
   #cat("********************************************************************************************************",\n")
   t <- object
-  intera<-paste(round(c(t$wd-1.96*sqrt(t$n^(3/2)*t$vd[1]),t$wd+1.96*sqrt(t$n^(3/2)*t$vd[1])),digits=digits))
+  intera<-paste(round(c(t$wd-1.96*t$n^(3/2)*sqrt(t$vd[1]),t$wd+1.96*t$n^(3/2)*sqrt(t$vd[1])),digits=digits))
   interb<-paste(round(exp(c(log(t$wr)-1.96*sqrt(t$vr/t$wr^2/t$n),log(t$wr)+1.96*sqrt(t$vr/t$wr^2/t$n))),digits=digits))
   interc<-paste(round(exp(c(log(t$wp)-1.96*sqrt(t$vp/t$wp^2/t$n),log(t$wp)+1.96*sqrt(t$vp/t$wp^2/t$n))),digits=digits))
   cat("Total number of subjects:                           ",paste(t$n),"\n")
